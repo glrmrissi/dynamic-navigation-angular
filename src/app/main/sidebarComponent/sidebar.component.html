@@ -1,0 +1,28 @@
+<nav>
+  <ul>
+    <li *ngFor="let item of items">
+      <!-- Item simples -->
+      <a [routerLink]="item.url">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        {{ item.title }}
+      </a>
+
+      <!-- Item colapsável -->
+      <div *ngIf="item.type === 'collapsable'">
+        <button>
+          <mat-icon>{{ item.icon }}</mat-icon>
+          {{ item.title }}
+        </button>
+        <ul>
+          <p>Sub-items:</p>
+          <li *ngFor="let child of item.children">
+            <a [routerLink]="child.url">
+              <mat-icon>{{ child.icon }}</mat-icon>
+              {{ child.title }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>
