@@ -59,6 +59,7 @@ export class WatchlistComponent {
       this.dataSource.data = Array.isArray(data) ? data : [data];
       // Wrap data in an array to match MatTableDataSource expected type
     });
+    this.watchlistService.getTrackedRequests();
   }
 
   ngAfterViewInit() {
