@@ -4,6 +4,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatTableDataSource } from '@angular/material/table';
 import { WatchlistService } from '../watchlist.service';
 import { WatchlistDTO } from '../models/watchlist.dto';
+import { MatPaginator } from '@angular/material/paginator';
 
 const elements_table: (keyof WatchlistDTO)[] = [
   'domain_code', 'business_name', 'user_name', 'total_invoices', 'total_accesses',
@@ -44,13 +45,14 @@ const columnLabels: Record<keyof WatchlistDTO, string> = {
 export class WatchlistComponent {
   columnLabels = columnLabels;
   constructor(private watchlistService: WatchlistService) { }
-
+  
   private _liveAnnouncer = inject(LiveAnnouncer);
-
+  
   displayedColumns: (keyof WatchlistDTO)[] = elements_table;
   dataSource = new MatTableDataSource<WatchlistDTO>([]);
-
+  
   @ViewChild(MatSort) sort: MatSort | undefined;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   columnsByTab = {
     0: ['domain_code', 'business_name', 'user_name', 'pipeline_step'],
@@ -71,6 +73,7 @@ export class WatchlistComponent {
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   announceSortChange(sortState: Sort) {
