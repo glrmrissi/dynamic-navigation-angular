@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './main/dashboard/dashboard-component/dashboard-component';
 import { ManagementsComponent } from './main/management/managements-component/managements-component';
+import { WatchlistComponent } from './main/watchlist/components/watchlist';
 
 const routes: Routes = [
   { 
@@ -9,6 +10,9 @@ const routes: Routes = [
    },
   { 
     path: 'managements', component: ManagementsComponent
+  },
+  { 
+    path: 'watchlist', component: WatchlistComponent
   },
   { 
     path: '**', redirectTo: 'managements'
