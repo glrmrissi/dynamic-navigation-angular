@@ -43,7 +43,7 @@ const columnLabels: Record<keyof WatchlistDTO, string> = {
 
 export class WatchlistComponent {
   columnLabels = columnLabels;
-  constructor(private watchlistService: WatchlistService) {}
+  constructor(private watchlistService: WatchlistService) { }
 
   private _liveAnnouncer = inject(LiveAnnouncer);
 
@@ -52,8 +52,14 @@ export class WatchlistComponent {
 
   @ViewChild(MatSort) sort: MatSort | undefined;
 
+  columnsByTab = {
+    0: ['domain_code', 'business_name', 'user_name', 'pipeline_step'],
+    1: ['business_name', 'plan_name', 'payment_date', 'is_active'],
+    2: ['business_name', 'email', 'is_deleted', 'deleted_at']
+  };
+
   ngOnInit() {
-    this.displayedColumns = Object.keys(columnLabels) as (keyof WatchlistDTO)[];
+    // this.displayedColumns = Object.keys(columnLabels) as (keyof WatchlistDTO)[];
     this.watchlistService.getConfig().subscribe((data) => {
       console.log(data);
       this.dataSource.data = Array.isArray(data) ? data : [data];
@@ -61,6 +67,7 @@ export class WatchlistComponent {
     });
     this.watchlistService.getTrackedRequests();
   }
+
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
