@@ -8,19 +8,23 @@ import { UsersComponent } from './main/management/users/users-component/users-co
 import { SettingsComponent } from './main/management/settings/settings-component/settings-component';
 import { NavigationModule } from "../navigation/navigation.module";
 import { CommonModule } from '@angular/common';
+import { WatchlistModule } from './main/watchlist/watchlits.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     App,
     ManagementsComponent,
     UsersComponent,
-    SettingsComponent
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
+    HttpClientModule,
     AppRoutingModule,
-    NavigationModule
+    NavigationModule,
+    WatchlistModule
 ],
   providers: [
     provideBrowserGlobalErrorListeners()

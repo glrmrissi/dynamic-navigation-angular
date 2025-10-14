@@ -31,5 +31,12 @@ export const appNavigation: NavigationItem[] = [
       { id: 'clientes', title: 'Clientes', type: 'basic', link: '/clientes' },
       { id: 'empresas', title: 'Empresas', type: 'basic', link: '/empresas' }
     ]
-  }
+  },
+  {
+    id: 'watchlist',
+    title: 'Watchlist',
+    type: 'basic',
+    icon: 'visibility',
+    link: '/watchlist'
+  },
 ];
