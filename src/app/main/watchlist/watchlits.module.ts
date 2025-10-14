@@ -7,6 +7,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { InOpening } from './components/in-opening/in-opening';
 import { InActive } from './components/in-active/in-active';
 import { Active } from './components/active/active';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     WatchlistComponent,
@@ -18,7 +20,9 @@ import { Active } from './components/active/active';
     CommonModule,
     MatTableModule,
     MatSortModule,
-    MatTabsModule
+    MatTabsModule,
+    MatPaginatorModule,
+    MatCardModule
   ]
 })
 export class WatchlistModule { }

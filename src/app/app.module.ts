@@ -10,6 +10,7 @@ import { NavigationModule } from "../navigation/navigation.module";
 import { CommonModule } from '@angular/common';
 import { WatchlistModule } from './main/watchlist/watchlits.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardModule } from './main/dashboard/dashboard-component.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     NavigationModule,
+    DashboardModule,
     WatchlistModule
 ],
   providers: [
