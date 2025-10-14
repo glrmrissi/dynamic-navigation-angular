@@ -1,0 +1,60 @@
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 100vh;
+    background-color: antiquewhite;
+    transition: all 0.2s ease;
+    button {
+        margin: 10px;
+        padding: 8px;
+        border: none;
+        border-radius: 8px;
+        background-color: lightcoral;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+            background-color: coral;
+        }
+    }
+    ul {
+        flex: 1;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        li {
+            margin: 8px 20px;
+            a {
+                display: flex;
+                border-radius: 8px;
+                background-color: lightgreen;
+                padding: 8px;
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+                &:hover {
+                    background-color: greenyellow;
+                    color: gray;
+                }
+            }
+        }
+    }
+}
+
+.side-bar.collapsed {
+    width: 4rem;
+    ul, li, a, span {
+        display: none;
+    }
+    ul, li, a {
+        justify-content: center;
+    }
+
+    
+}
+
+/* navigation.scss --- IGNORE --- */
