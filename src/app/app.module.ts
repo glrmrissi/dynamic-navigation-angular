@@ -11,6 +11,9 @@ import { CommonModule } from '@angular/common';
 import { WatchlistModule } from './main/watchlist/watchlits.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './main/dashboard/dashboard-component.module';
+import { StaticPageModule } from './main/static-page/static-page.module';
+import { Login } from './main/login/login';
+import { Register } from './main/register/register';
 
 @NgModule({
   declarations: [
@@ -18,15 +21,18 @@ import { DashboardModule } from './main/dashboard/dashboard-component.module';
     ManagementsComponent,
     UsersComponent,
     SettingsComponent,
+    Login,
+    Register,
   ],
   imports: [
     BrowserModule,
     CommonModule,
     HttpClientModule,
     AppRoutingModule,
-    NavigationModule,
+    NavigationModule, 
     DashboardModule,
-    WatchlistModule
+    WatchlistModule,
+    StaticPageModule
 ],
   providers: [
     provideBrowserGlobalErrorListeners()
