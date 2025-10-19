@@ -9,6 +9,13 @@ export type NavigationItem = {
 
 export const appNavigation: NavigationItem[] = [
   {
+    id: 'staticPage',
+    title: 'Static Page',
+    type: 'basic',
+    icon: 'home',
+    link: '/static-page'
+  },
+  {
     id: 'dashboard',
     title: 'Dashboard',
     type: 'basic',
