@@ -8,7 +8,7 @@ import { DashboardComponent } from './dashboard-component/dashboard-component';
   ],
   imports: [
     CommonModule,
-    MatCardModule
+    MatCardModule,
   ]
 })
 export class DashboardModule { }
