@@ -5,6 +5,7 @@ export type NavigationItem = {
   link?: string;
   type: 'basic' | 'collapsable' | 'group';
   children?: NavigationItem[];
+  expanded?: boolean;
 }
 
 export const appNavigation: NavigationItem[] = [

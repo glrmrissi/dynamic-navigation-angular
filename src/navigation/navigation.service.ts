@@ -14,7 +14,7 @@ export class NavigationService {
     return this._navigation.asObservable();
   }
 
-  setNavigation(navigation: NavigationItem[]) {
+  setNavigation(navigation: NavigationItem[]) { 
     this._navigation.next(navigation);
   }
 
